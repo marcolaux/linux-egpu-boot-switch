@@ -1,0 +1,32 @@
+#!/bin/bash
+
+DEVICE=/sys/bus/pci/devices/0000\:08\:00.0
+XORGFILE=/etc/X11/xorg.conf
+
+if [ -d $DEVICE ]; then
+   echo "Device directory $DEVICE exists."
+   DEVICEPRESENT=true
+else
+   echo "Device directory $DEVICE does not exist."
+   DEVICEPRESENT=false
+fi
+
+if [ -f $XORGFILE ]; then
+   echo "$XORGFILE exists."
+   XORGFILEPRESENT=true
+else
+   echo "$XORGFILE does not exist."
+   XORGFILEPRESENT=false
+fi
+
+if [[ $DEVICEPRESENT == true && $XORGFILEPRESENT == true ]]; then
+	echo "Device AND Xorg.conf present -> nothing to do."
+elif [[ $DEVICEPRESENT == true && $XORGFILEPRESENT == false ]]; then
+	echo "Device present / Xorg.conf NOT present -> creating xorg.conf"
+	mv /etc/X11/xorg.conf.egpu /etc/X11/xorg.conf
+elif [[ $DEVICEPRESENT == false && $XORGFILEPRESENT == true ]]; then
+	echo "Device NOT present / Xorg.conf present -> removing xorg.conf"
+	mv /etc/X11/xorg.conf /etc/X11/xorg.conf.egpu
+elif [[ $DEVICEPRESENT == false && $XORGFILEPRESENT == false ]]; then
+	echo "Device NOT present / Xorg.conf NOT present -> nothing to do"
+fi

@@ -1,0 +1,11 @@
+[Unit]
+Description=GPUBOOT: apply GPU setttings . . .
+Before=graphical.target
+
+[Service]
+User=root
+Type=simple
+ExecStart=/sbin/nvidia_egpu_detect
+
+[Install]
+WantedBy=graphical.target
