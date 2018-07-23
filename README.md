@@ -2,6 +2,8 @@ linux-nvidia-egpu-boot-switch
 
 # automate things with an integrated GPU and an NVIDIA eGPU
 
+EDIT: Now I am able to use the eGPU with a screen attached without further configuration and without these scripts - also expanded workspace just works. I don't really know why but Ubuntu Mainline Kernel 4.17.9 could have done the trick.
+
 first of all: this is especially for my own setup. you would have to adjust things.
 
 Setup:
