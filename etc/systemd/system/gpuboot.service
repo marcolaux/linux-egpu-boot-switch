@@ -5,7 +5,7 @@ Before=graphical.target
 [Service]
 User=root
 Type=simple
-ExecStart=/sbin/nvidia_egpu_detect
+ExecStart=/usr/sbin/nvidia_egpu_detect
 
 [Install]
 WantedBy=graphical.target
