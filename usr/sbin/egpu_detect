@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVICE=/sys/bus/pci/devices/0000\:08\:00.0
+DEVICE=/sys/bus/pci/devices/0000\:3f\:00.0
 XORGFILE=/etc/X11/xorg.conf
 
 if [ -d $DEVICE ]; then
