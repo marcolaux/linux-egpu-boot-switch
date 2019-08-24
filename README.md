@@ -18,7 +18,7 @@ How to install this:
   - change the BusID in /etc/X11/xorg.conf.egpu
     - if on AMD, change the Driver "nvidia" to your AMD driver (eg. "amdgpu")
   - change the BusID in /usr/sbin/egpu_detect
-- make /usr/sbin/egpu_detect bootable
+- make /usr/sbin/egpu_detect executable
   > 'chmod +x /usr/sbin/egpu_detect'
 - enable the new gpuboot service
   > 'systemctl enable gpuboot'
