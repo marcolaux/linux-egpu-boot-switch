@@ -1,6 +1,6 @@
-linux-nvidia-egpu-boot-switch
+linux-egpu-boot-switch
 
-# automate things with an integrated GPU and an NVIDIA eGPU
+# automate things with an integrated GPU and an NVIDIA / AMD eGPU
 
 Tested Setup:
 - XPS 13 9370 / Lenovo X1 Yoga
