@@ -9,7 +9,7 @@ Tested Setup:
 
 Prerequirements:
 - once booted connect the eGPU enclosure and authorize it (if user authentication is needed)
-  > newest Ubuntu and Fedora versions with GNOME handles this via GUI
+  - newest Ubuntu and Fedora versions with GNOME handles this via GUI
 - if on NVIDIA install NVIDIA drivers
 
 How to install this:
@@ -17,6 +17,7 @@ How to install this:
 - copy everything to the appropriate directories
   - change the BusID in /etc/X11/xorg.conf.egpu
     - if on AMD, change the Driver "nvidia" to your AMD driver (eg. "amdgpu")
+      - if you don't have an integrated Intel GPU delete the whole first Section with the "modesetting" driver
   - change the BusID in /usr/sbin/egpu_detect
 - make /usr/sbin/egpu_detect executable
   > 'chmod +x /usr/sbin/egpu_detect'
